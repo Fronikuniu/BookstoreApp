@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" media="(min-width: 768px)" href="styles/tablet.css">
-    <link rel="stylesheet" media="(min-width: 1024px)" href="styles/laptop.css">
-    <link rel="stylesheet" media="(min-width: 1440px)" href="styles/desktop.css">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="../styles/loader-animation.css">
+        <link rel="stylesheet" media="(min-width: 768px)" href="styles/tablet.css">
+        <link rel="stylesheet" media="(min-width: 1024px)" href="styles/laptop.css">
+        <link rel="stylesheet" media="(min-width: 1440px)" href="styles/desktop.css">
+        <title>Document</title>
+    </head>
+    <body>
         <nav class="menu" id="menu">
             <div class="container">
                 <div class="menu__top">
@@ -18,11 +19,11 @@
                         <a href="">
                             <img src="images/logo.svg" alt="Logo">
                         </a>
-        
+                        
                         <div class="nav-links">
                             <label for="SearchBooks"></label>
-                            <input placeholder="Co chcesz wyszukać?" type="text" name="SearchBooks" class="input-search">
-                            <button class="btn--search " type="submit">
+                            <input placeholder="Co chcesz wyszukać?" type="text" name="SearchBooks" class="input-search" id="searchInput">
+                            <button class="btn--search " type="submit" id="searchButton">
                                 <span class="material-icons md-36">search</span>
                             </button>
                         </div>
@@ -42,43 +43,43 @@
     
                         <div class="books">
                             <button>
-                                <a href="../ksiazki">Książki</a>           
+                                <a href="/Ksiazki">Książki</a>           
                                 <span class="material-icons">keyboard_arrow_down</span>
                             </button>
     
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Literatura">
                                         <span class="material-icons">book</span>
                                         Literatura
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Lektury">
                                         <span class="material-icons">auto_stories</span>
                                         Lektury
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Ksiązki_obcojęzyczne">
                                         <span class="material-icons">menu_book</span>
                                         Ksiązki obcojęzyczne
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Podreczniki">
                                         <span class="material-icons">import_contacts</span>
                                         Podręczniki
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Biografie">
                                         <span class="material-icons">local_library</span>
                                         Biografie
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Ksiazki/#Dokumentalne">
                                         <span class="material-icons">description</span>
                                         Dokumentalne
                                     </a>
@@ -88,31 +89,31 @@
     
                         <div class="video">
                             <button>
-                                <a href="">Wideo</a>
+                                <a href="/Wideo">Wideo</a>
                                 <span class="material-icons">keyboard_arrow_down</span>
                             </button>
     
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Wideo#EBooki">
                                         <span class="material-icons md-30">earbuds</span>
                                         E-booki
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Wideo#Audiobooki">
                                         <span class="material-icons md-30">headphones</span>
                                         Audiobooki
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Wideo#Filmy">
                                         <span class="material-icons md-30">local_movies</span>
                                         Filmy
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/Wideo#Muzyka">
                                         <span class="material-icons md-30">audiotrack</span>
                                         Muzyka
                                     </a>
@@ -121,11 +122,11 @@
                         </div>
 
                         <button>
-                            <a href="">O nas</a>
+                            <a href="#Onas">O nas</a>
                         </button>
 
                         <button>
-                            <a href="">Kontakt</a>
+                            <a href="#Kontakt">Kontakt</a>
                         </button>
                     </div>
                 </div>  
@@ -140,15 +141,17 @@
                             <h1>Witamy na stronie naszej księgarni internetowej.</h1>
                             <h2>Znajdziesz tutaj wiele ciekawych książek!</h2>
                             <p></p>
-
-                            <div class="landing-page__move">
-                                <a href="#elo">
-                                    <span class="material-icons md-48">keyboard_arrow_down</span>
-                                </a>
-                            </div>
                         </div>
+
+                        <a href="#ReadOn" class="landing-page__button">
+                            <span class="material-icons md-48">keyboard_arrow_down</span>
+                        </a>
                     </div>
                 </div>
+            </div>
+            
+            <div class="ReadOn">
+
             </div>
 
             <div class="slider">
@@ -157,12 +160,16 @@
         </main>
 
         <footer>
-            <div class="box" id="elo">
-                asdasdas
+            <div id="Onas">
+
+            </div>
+
+            <div id="Kontakt">
+
             </div>
         </footer>
-    
-    <script src="scripts/main.js" type="module"></script>
-    <script src="scripts/fixed-menu.js"></script>
+        
+        <script src="scripts/main.js" type="module"></script>
+        <script src="scripts/fixed-menu.js"></script>
     </body>
 </html>

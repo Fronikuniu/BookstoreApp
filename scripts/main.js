@@ -3,13 +3,7 @@ import { mapListToDOMElements, createDOMElem } from './DOMActions.js';
 
 class BookstoreApp {
     constructor() {
-        this.viewElems = {};
-        this.selectedName = {};
-        this.initializeApp();
-    }
-
-    initializeApp = () => {
-
+        
     }
 }
 
