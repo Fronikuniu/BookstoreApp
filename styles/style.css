@@ -16,10 +16,12 @@ body{
 a{
     text-decoration: none;
 }
-.btn--search{
-    position: relative;
+.btn {
     background: none;
     border: none;
+    cursor: pointer;
+}
+.btn--search{
     color: #7c7c7c;
     transition: .5s;
 }
@@ -29,7 +31,6 @@ a{
 .input-search{
     height: 34px;
     font-size: 20px;
-    /* background: unset; */
 }
 .container{
     width: 1120px;
@@ -57,6 +58,7 @@ a{
 .menu__top{
     display: flex;
     height: 60px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -67,18 +69,22 @@ a{
     vertical-align: middle;
     transition: color .4s ease;
 }
-.menu__top a:hover{
-    color: rgb(68, 183, 255);
+.menu__top__search{
+    display: flex;
+    justify-content: center;
 }
-.menu__top__links{
-    width: 100%;
+.menu__top__login {
+    width: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.nav-links{
-    display: flex;
-    justify-content: center;
+.menu__top__login button{
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 8px rgb(213, 213, 213),
+                inset -3px -3px 8px rgb(240, 240, 240);
 }
 /* Menu */
 .dropdown{
@@ -100,6 +106,7 @@ a{
     font-weight: 600;
     cursor: pointer;
     transition: color .5s ease;
+    padding: 0;
 }
 .dropdown button a{
     transition: color .4s ease;
