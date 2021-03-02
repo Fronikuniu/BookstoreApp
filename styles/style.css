@@ -334,6 +334,8 @@ textarea {
 {
 	-webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
                         inset -4px -4px 20px rgb(76, 76, 76);
+    box-shadow: inset 4px 4px 15px #0e0e0e,
+                        inset -4px -4px 20px rgb(76, 76, 76);
 	border-radius: 10px;
 	background-color: rgb(95, 95, 95);
 }
@@ -349,6 +351,8 @@ textarea {
 {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
+                        inset -4px -4px 20px rgb(76, 76, 76);
+    box-shadow: inset 4px 4px 15px #0e0e0e,
                         inset -4px -4px 20px rgb(76, 76, 76);
 	background: none;
 }
