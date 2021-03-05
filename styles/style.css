@@ -347,8 +347,7 @@ textarea {
 }
 
 /* Zmiana scrolla w text area */
-.contact-form-message::-webkit-scrollbar-track
-{
+.contact-form-message::-webkit-scrollbar-track, .panel-admin-desc::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
                         inset -4px -4px 20px rgb(76, 76, 76);
     box-shadow: inset 4px 4px 15px #0e0e0e,
@@ -357,20 +356,18 @@ textarea {
 	background-color: rgb(95, 95, 95);
 }
 
-.contact-form-message::-webkit-scrollbar
-{
+.contact-form-message::-webkit-scrollbar, .panel-admin-desc::-webkit-scrollbar {
 	width: 12px;
 	background: none;
     border-radius: 10px;
 }
 
-.contact-form-message::-webkit-scrollbar-thumb
-{
+.contact-form-message::-webkit-scrollbar-thumb, .panel-admin-desc::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
                         inset -4px -4px 20px rgb(76, 76, 76);
     box-shadow: inset 4px 4px 15px #0e0e0e,
-                        inset -4px -4px 20px rgb(76, 76, 76);
+                inset -4px -4px 20px rgb(76, 76, 76);
 	background: none;
 }
 /* Koniec */
@@ -400,7 +397,6 @@ textarea {
 
 .fb  img, .tw img, .ig img, .in img {
     background: unset;
-    transition: background 2s ease-out;
 }
 
 .fb img {
@@ -438,3 +434,112 @@ textarea {
 .Flaticon {
     display: none;
 }
+
+/* ADMIN PANEL */
+
+.admin-panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/images/footer-bg.png');
+}
+
+.admin-panel-container h1 {
+    color: rgb(201, 201, 201);
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px #c7c7c7;
+}
+
+.admin-panel-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 600px;
+    box-shadow: 13px 13px 20px #171717, 
+                -13px -13px 20px rgb(56 56 56);
+    border-radius: 50px;
+}
+
+.ap-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 650px;
+}
+
+.admin-panel-form input, textarea, select {
+    height: 60px;
+    width: 400px;
+    box-shadow: inset 4px 4px 20px #0e0e0e,
+                inset -4px -4px 20px rgb(76, 76, 76);
+    background: none;
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    outline: 0;
+    color: rgb(117, 117, 117);
+    font-size: 1rem;
+}
+
+select:hover{
+    background-color: #212121;
+}
+
+input[type=submit], input[type=reset] {
+    font-weight: 600;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #1f1f1f;
+    box-shadow: inset 4px 4px 20px #0c0c0c, 
+                inset -4px -4px 20px rgb(76 76 76);
+}
+
+.admin-panel-form textarea {
+    height: 200px;
+}
+
+.admin-panel-form label {
+    color: rgb(117, 117, 117);
+    font-size: 20px;
+}
+
+.admin-panel-form select {
+    color: rgb(117, 117, 117);
+    height: 50px;
+    padding: 15px;
+}
+
+.admin-panel-form select:focus {
+    color: rgb(117, 117, 117);
+    background: none;
+}
+
+.admin-panel-buttons {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+input[type=submit], input[type=reset] {
+    height: 50px;
+    width: 180px;
+    padding: 0;
+}
+
+optgroup {
+    background-color: #1f1f1f;
+}
+
+option {
+    background-color: #2e2e2e;
+}
+
+/* ADMIN PANEL KONIEC */
