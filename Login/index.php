@@ -18,7 +18,7 @@
                 <h1>Zaloguj się</h1>
     
                 <div>
-                    <form action="" class="login-form">
+                    <form action="/PHP/Login.php" method="POST" class="login-form">
                         <input type="text" name="login" placeholder="Login">
                         <input type="password" name="password" placeholder="Hasło">
         
