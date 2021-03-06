@@ -448,7 +448,7 @@ textarea {
 }
 
 .admin-panel-container h1 {
-    color: rgb(201, 201, 201);
+    color: white;
     font-size: 40px;
     font-weight: bold;
     text-shadow: 0px 0px 15px #c7c7c7;
@@ -487,15 +487,15 @@ textarea {
     font-size: 1rem;
 }
 
-select:hover{
-    background-color: #212121;
-}
-
-input[type=submit], input[type=reset] {
+.admin-panel-buttons input[type=submit], .admin-panel-buttons input[type=reset] {
     font-weight: 600;
+    height: 50px;
+    width: 180px;
+    padding: 0;
+    cursor: pointer;
 }
 
-input[type=submit]:hover, input[type=reset]:hover {
+.admin-panel-buttons input[type=submit]:hover, .admin-panel-buttons input[type=reset]:hover {
     background-color: #1f1f1f;
     box-shadow: inset 4px 4px 20px #0c0c0c, 
                 inset -4px -4px 20px rgb(76 76 76);
@@ -514,6 +514,7 @@ input[type=submit]:hover, input[type=reset]:hover {
     color: rgb(117, 117, 117);
     height: 50px;
     padding: 15px;
+    cursor: pointer;
 }
 
 .admin-panel-form select:focus {
@@ -521,25 +522,139 @@ input[type=submit]:hover, input[type=reset]:hover {
     background: none;
 }
 
+.admin-panel-form select:hover{
+    background-color: #212121;
+}
+
 .admin-panel-buttons {
     width: 400px;
     display: flex;
     justify-content: space-between;
-
 }
 
-input[type=submit], input[type=reset] {
-    height: 50px;
-    width: 180px;
-    padding: 0;
+.admin-panel-form textarea::placeholder {
+    font-size: 1.1rem;
 }
 
-optgroup {
+.admin-panel-form optgroup {
     background-color: #1f1f1f;
 }
 
-option {
+.admin-panel-form option {
     background-color: #2e2e2e;
 }
 
 /* ADMIN PANEL KONIEC */
+
+/* LOGOWANIE REJESTRACJA */
+
+.login-register-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/footer-bg.png');
+    height: 100vh;
+    width: 100vw;
+}
+
+.login-register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 1000px;
+    box-shadow: 13px 13px 20px #171717, 
+                -13px -13px 20px rgb(56 56 56);
+    border-radius: 50px;
+}
+
+.login-register-container h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px #c7c7c7;
+}
+
+.login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 700px;
+}
+
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login-form input, .register-form input {
+    height: 60px;
+    width: 320px;
+    box-shadow: inset 4px 4px 20px #0e0e0e,
+                inset -4px -4px 20px rgb(76, 76, 76);
+    background: none;
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    outline: 0;
+    color: rgb(117, 117, 117);
+    font-size: 1rem;
+}
+
+.login-form input[type=checkbox], .register-form input[type=checkbox] {
+    width: unset;
+    height: unset;
+    box-shadow: unset;
+    cursor: pointer;
+}
+
+.login-form input[type=submit], .register-form input[type=submit] {
+    height: 50px;
+    width: 220px;
+    padding: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-form a, .register-form a {
+    color: tomato;
+}
+
+.register-names, .register-passwords {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+}
+
+.register-names input, .register-passwords input {
+    width: 150px;
+}
+
+.login-form {
+    height: 310px;
+}
+
+.register-form {
+    height: 450px;
+}
+
+.form-checkbox {
+    width: 320px;
+}
+
+.form-checkbox label {
+    color: rgb(201, 201, 201);
+}
+
+.login-form input[type=submit]:hover, .register-form input[type=submit]:hover {
+    background-color: #1f1f1f;
+    box-shadow: inset 4px 4px 20px #0c0c0c, 
+                inset -4px -4px 20px rgb(76 76 76);
+}
+
+/* KONIEC LOGOWANIA REJESTRACJI */
