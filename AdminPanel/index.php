@@ -1,5 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false) && ($_SESSION['AdminPanel'] == 0)) {
+    header('Location: ../');
+    exit();
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +21,12 @@
     <link rel="shortcut icon" href="/images/icon-AdminPanel.svg">
     <title>Księgarnia internetowa | Admin Panel</title>
 </head>
+
 <body>
     <div class="admin-panel-container">
         <h1>Admin Panel</h1>
         <div class="admin-panel-form">
-            <form action="/PHP/AddToBase.php" class="ap-form">
+            <form action="AddToBase.php" class="ap-form">
                 <input type="text" name="title" placeholder="Tytuł">
                 <input type="text" name="author" placeholder="Autor">
                 <textarea type="text" name="description" class="panel-admin-desc" placeholder="Opis"></textarea>
@@ -43,7 +54,7 @@
                         <option value="muzyka">Muzyka</option>
                     </optgroup>
                 </select>
-                
+
                 <div class="admin-panel-buttons">
                     <input type="reset" value="Wyczyść formularz">
                     <input type="submit" value="Dodaj książkę">
@@ -54,8 +65,11 @@
 
     <div class="Flaticon">
         <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
         <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </div>
 </body>
+
 </html>
