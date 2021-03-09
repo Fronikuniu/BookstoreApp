@@ -30,19 +30,26 @@ if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
 
                 <div>
                     <form action="login.php" method="POST" class="login-form">
-                        <input type="text" name="login" placeholder="Login">
-                        <input type="password" name="password" placeholder="Hasło">
-
-                        <div class="form-checkbox">
-                            <input type="checkbox" name="remember">
-                            <label for="remember">Zapamiętaj mnie</label>
-                        </div>
-
                         <?php
                         if (isset($_SESSION['error'])) {
-                            echo $_SESSION['error'];
+                            echo '<input class="error" type="text" name="login" placeholder="Login">';
+                            echo '<div>';
+                            echo '<input class="error" type="password" name="password" placeholder="Hasło">';
+                            echo '<span class="error-text">' . $_SESSION['error'] . '</span>';
+                            echo '</div>';
+                            unset($_SESSION['error']);
+                        } else {
+                            echo '<input type="text" name="login" placeholder="Login">';
+                            echo '<input type="password" name="password" placeholder="Hasło">';
                         }
                         ?>
+
+                        <div class="form-checkbox">
+                            <label>
+                                <input type="checkbox" name="remember">
+                                Zapamiętaj mnie
+                            </label>
+                        </div>
 
                         <input type="submit" name="login-submit" value="Zaloguj się">
 
@@ -52,33 +59,12 @@ if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
             </div>
 
             <div class="register-container">
-                <h1>Zarejestruj się</h1>
-
-                <div>
-                    <form action="" class="register-form">
-                        <div class="register-names">
-                            <input type="text" name="firstname" placeholder="Imie">
-                            <input type="text" name="lastname" placeholder="Nazwisko">
-                        </div>
-
-                        <input type="text" name="fullname" placeholder="Login">
-                        <input type="email" name="email" placeholder="E-mail">
-
-                        <div class="register-passwords">
-                            <input type="password" name="password" placeholder="Hasło">
-                            <input type="password" name="repeatpassword" placeholder="Powtórz hasło">
-                        </div>
-
-                        <div class="form-checkbox">
-                            <input type="checkbox" name="termsofuser">
-                            <label for="termsofuser">
-                                Zgadzam się z
-                                <a href="">Warunkami uzytkownika</a>
-                            </label>
-                        </div>
-
-                        <input type="submit" name="login-submit" value="Zarejestruj się">
-                    </form>
+                <div class="login-register--text">
+                    <h2>Nie masz jeszcze konta?</h2>
+                    <p>Zarejestruj sie i korzystaj z naszej aplikacji księgarni internetowej!</p>
+                    <button>
+                        <a href="../Register/">Zarejestruj się!</a>
+                    </button>
                 </div>
             </div>
         </div>

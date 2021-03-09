@@ -3,46 +3,55 @@
 session_start();
 require_once "../PHP/connect.php";
 
-$connect = @new mysqli($host, $db_user, $db_password, $db_name);
+try {
+  $connect = new mysqli($host, $db_user, $db_password, $db_name);
 
-if ($connect->connect_errno != 0) {
-  echo "Error: " . $connect->connect_errno;
-} else {
+  if ($connect->connect_errno != 0) {
+    throw new Exception(mysqli_connect_errno());
+  } else {
 
-  $login = $_POST['login'];
-  $haslo = $_POST['password'];
+    $login = $_POST['login'];
+    $haslo = $_POST['password'];
 
-  $login = htmlentities($login, ENT_QUOTES, "UTF-8");
-  $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
+    $login = htmlentities($login, ENT_QUOTES, "UTF-8");
 
-  $sql = sprintf(
-    "SELECT * FROM users WHERE BINARY Login='%s' AND BINARY Password='%s'",
-    mysqli_real_escape_string($connect, $login),
-    mysqli_real_escape_string($connect, $haslo)
-  );
+    $sql = sprintf(
+      "SELECT * FROM users WHERE BINARY login='%s'",
+      mysqli_real_escape_string($connect, $login)
+    );
 
-  if ($response = @$connect->query($sql)) {
+    $response = $connect->query($sql);
+    if (!$response) {
+      throw new Exception($connect->error);
+    }
 
     $numberOfUsers = $response->num_rows;
-
     if ($numberOfUsers > 0) {
-
-      $_SESSION['logged'] = true;
-
       $row = $response->fetch_assoc();
-      $_SESSION['id'] = $row['id'];
-      $_SESSION['Name'] = $row['Login'];
-      $_SESSION['AdminPanel'] = $row['AccessToAP'];
 
-      unset($_SESSION['error']);
-      $response->close();
-      header('Location: ../');
+      if (password_verify($haslo, $row['password']) == true) {
+
+        $_SESSION['logged'] = true;
+
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['Name'] = $row['login'];
+        $_SESSION['AdminPanel'] = $row['accessToAP'];
+
+        unset($_SESSION['error']);
+        $response->close();
+        header('Location: ../');
+      } else {
+        $_SESSION['error'] = 'Niepoprawny login lub hasło!';
+        header('Location: ../Login/');
+      }
     } else {
-      $_SESSION['error'] = '<span style="color: tomato;">Niepoprawny login lub hasło!</span>';
-
+      $_SESSION['error'] = 'Niepoprawny login lub hasło!';
       header('Location: ../Login/');
     }
-  }
 
-  $connect->close();
+    $connect->close();
+  }
+} catch (Exception $error) {
+  echo 'Błąd serwera';
+  echo $error;
 }

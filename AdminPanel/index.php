@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false) && ($_SESSION['AdminPanel'] == 0)) {
-    header('Location: ../');
-    exit();
+if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
+    if (($_SESSION['AdminPanel'] == 0) || ($_SESSION['AdminPanel'] == false)) {
+        header('Location: ../');
+        exit();
+    }
 };
 ?>
 
