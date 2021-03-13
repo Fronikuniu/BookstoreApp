@@ -25,12 +25,16 @@ if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
 <body>
     <div class="login-register-body">
         <div class="login-register-container">
+
+            <a class="material-icons md-34 login-register-close" href="../">close</a>
+
             <div class="login-container">
                 <h1>Zaloguj się</h1>
 
                 <div>
                     <form action="login.php" method="POST" class="login-form">
                         <?php
+                        //Login, password input and Login, password error text
                         if (isset($_SESSION['error'])) {
                             echo '<input class="error" type="text" name="login" placeholder="Login">';
                             echo '<div>';

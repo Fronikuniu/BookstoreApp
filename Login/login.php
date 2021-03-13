@@ -35,7 +35,11 @@ try {
 
         $_SESSION['id'] = $row['id'];
         $_SESSION['Name'] = $row['login'];
-        $_SESSION['AdminPanel'] = $row['accessToAP'];
+        $accessToAP = $row['accessToAP'];
+
+        if ($accessToAP == 1) {
+          $_SESSION['AdminPanel'] = true;
+        }
 
         unset($_SESSION['error']);
         $response->close();

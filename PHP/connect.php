@@ -2,5 +2,5 @@
 
 $host = "localhost";
 $db_user = "root";
-$db_password = "Komputer47qq";
+$db_password = "";
 $db_name = "ksiegarnia";

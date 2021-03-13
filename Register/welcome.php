@@ -7,6 +7,16 @@ if (!isset($_SESSION['RegisterComplete'])) {
 } else {
   unset($_SESSION['RegisterComplete']);
 }
+
+//Removing stored values from the form
+if (isset($_SESSION['rd_firstname'])) unset($_SESSION['rd_firstname']);
+if (isset($_SESSION['rd_lastname'])) unset($_SESSION['rd_lastname']);
+if (isset($_SESSION['rd_login'])) unset($_SESSION['rd_login']);
+if (isset($_SESSION['rd_email'])) unset($_SESSION['rd_email']);
+if (isset($_SESSION['rd_password'])) unset($_SESSION['rd_password']);
+if (isset($_SESSION['rd_repeatpassword'])) unset($_SESSION['rd_repeatpassword']);
+if (isset($_SESSION['rd_termsofuser'])) unset($_SESSION['rd_termsofuser']);
+
 ?>
 
 <!DOCTYPE html>

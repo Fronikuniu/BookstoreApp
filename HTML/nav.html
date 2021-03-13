@@ -16,6 +16,7 @@
       <div class="menu__top__login">
         <?php
 
+        <!-- If the user has access to the admin panel -->
         if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
           if ($_SESSION['AdminPanel'] == 1) {
             echo "Zalogowano jako: <br>" . @$_SESSION['Name'];

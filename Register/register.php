@@ -1,10 +1,13 @@
 <?php
 
-if (isset($_POST['email'])) {
-  //Jesli udana walidacja 
+if (isset($_POST['firstname'])) {
+  //If validation complete
   $validationComplete = true;
 
-  //Poprawnosc imiona
+  $regexName = '/!|@|#|\$|%|\^|&|\*|\(|\)|-|_|=|\+|\[|\]|{|}|\||\\\\|:|;|"|\'|,|\.|<|>|\?|\/|`|~|\s/m';
+  $regexLogin = '/!|@|#|\$|%|\^|&|\*|\(|\)|_|=|\+|\[|\]|{|}|\||\\\\|:|;|"|\'|,|\.|<|>|\?|\/|`|~|\s/m';
+
+  //Correctness of the FirstName
   $firstname = $_POST['firstname'];
   if ((strlen($firstname) < 3) || (strlen($firstname) > 23)) {
     $validationComplete = false;
@@ -12,13 +15,13 @@ if (isset($_POST['email'])) {
     $_SESSION['error_name'] = "Imię i nazwisko muszą zawierać od 3 do 23 znaków.";
   }
 
-  if (ctype_alnum($firstname) == false) {
+  if (preg_match_all($regexName, $firstname, $matchesFName, PREG_SET_ORDER, 0) == true) {
     $validationComplete = false;
-    $_SESSION['error_firstname'] = "Imię musi składać sie tylko z liter i cyfr (Bez PL znaków)";
-    $_SESSION['error_name'] = "Imię i nazwisko muszą składać sie tylko z liter i cyfr (Bez polskich znaków)";
+    $_SESSION['error_firstname'] = "Imię musi składać sie tylko z liter i cyfr. Niedozwolone znaki: " . json_encode($matchesFName);
+    $_SESSION['error_name'] = "Imię i nazwisko muszą składać sie tylko z liter i cyfr.";
   }
 
-  //Poprawnosc nazwiska
+  //Correctness of the LastName
   $lastname = $_POST['lastname'];
   if ((strlen($lastname) < 3) || (strlen($lastname) > 23)) {
     $validationComplete = false;
@@ -26,25 +29,25 @@ if (isset($_POST['email'])) {
     $_SESSION['error_name'] = "Imię i nazwisko muszą zawierać od 3 do 23 znaków.";
   }
 
-  if (ctype_alnum($lastname) == false) {
+  if (preg_match_all($regexName, $lastname, $matchesLName, PREG_SET_ORDER, 0) == true) {
     $validationComplete = false;
-    $_SESSION['error_lastname'] = "Nazwisko musi składać sie tylko z liter i cyfr (Bez PL znaków)";
-    $_SESSION['error_name'] = "Imię i nazwisko muszą składać sie tylko z liter i cyfr (Bez polskich znaków)";
+    $_SESSION['error_lastname'] = "Nazwisko musi składać sie tylko z liter i cyfr. Niedozwolone znaki: " . json_encode($matchesLName);
+    $_SESSION['error_name'] = "Imię i nazwisko muszą składać sie tylko z liter i cyfr.";
   }
 
-  //Poprawnosc loginu
+  //Correctness of the Login
   $login = $_POST['login'];
   if ((strlen($login) < 3) || (strlen($login) > 20)) {
     $validationComplete = false;
     $_SESSION['error_login'] = "Login musi zawierać od 3 do 20 znaków.";
   }
 
-  if (ctype_alnum($login) == false) {
+  if (preg_match_all($regexLogin, $login, $matchesLogin, PREG_SET_ORDER, 0) == true) {
     $validationComplete = false;
-    $_SESSION['error_login'] = "Login musi składać sie tylko z liter i cyfr (Bez polskich znaków)";
+    $_SESSION['error_login'] = "Login musi składać sie tylko z liter i cyfr. Niedozwolone znaki: " . json_encode($matchesLogin);
   }
 
-  //Poprawnosc emailu
+  //Correctness of the Email
   $email = $_POST['email'];
   $emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);
   if ((filter_var($emailSafe, FILTER_VALIDATE_EMAIL) == false) || ($emailSafe != $email)) {
@@ -52,7 +55,7 @@ if (isset($_POST['email'])) {
     $_SESSION['error_email'] = "Podałeś błędny email.";
   }
 
-  //Poprawnosc hasła
+  //Correctness of the Password
   $password = $_POST['password'];
   $repeatpassword = $_POST['repeatpassword'];
   if ((strlen($password) < 8) || (strlen($password) > 30)) {
@@ -67,7 +70,7 @@ if (isset($_POST['email'])) {
 
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-  //Poprawnosc zaakceptowania regulaminu
+  //Correctness of accepting the TermsOfUser
   if (!isset($_POST['termsofuser'])) {
     $validationComplete = false;
     $_SESSION['error_termsofuser'] = "Musisz zaakceptowac regulamin.";
@@ -83,6 +86,16 @@ if (isset($_POST['email'])) {
     $_SESSION['error_captcha'] = "Musisz pomyślnie przejść captche.";
   }
 
+  //Remembering the entered data
+  $_SESSION['rd_firstname'] = $firstname;
+  $_SESSION['rd_lastname'] = $lastname;
+  $_SESSION['rd_login'] = $login;
+  $_SESSION['rd_email'] = $email;
+  $_SESSION['rd_password'] = $password;
+  $_SESSION['rd_repeatpassword'] = $repeatpassword;
+  if (isset($_POST['termsofuser'])) $_SESSION['rd_termsofuser'] = true;
+
+  //Connect with DataBase
   require_once "../PHP/connect.php";
   mysqli_report(MYSQLI_REPORT_STRICT);
 
@@ -93,7 +106,7 @@ if (isset($_POST['email'])) {
       throw new Exception(mysqli_connect_errno());
     } else {
 
-      //Sprawdzenie czy w bazie jest juz taki sam email
+      //Checking if the same email is already in the database
       $responseEmail = $connect->query("SELECT id FROM users WHERE email='$email'");
       if (!$responseEmail) {
         throw new Exception($connect->error);
@@ -105,7 +118,7 @@ if (isset($_POST['email'])) {
         $_SESSION['error_email'] = "Podany adres email jest juz przypisany do innego konta.";
       }
 
-      //Sprawdzenie czy w bazie jest juz taki sam login
+      //Checking if the same login is already in the database
       $responseLogin = $connect->query("SELECT id FROM users WHERE login='$login'");
       if (!$responseLogin) {
         throw new Exception($connect->error);
@@ -117,10 +130,10 @@ if (isset($_POST['email'])) {
         $_SESSION['error_login'] = "Podany login jest już zajęty przez innego użytkownika.";
       }
 
-      //Jesli cała walidacja przebiegła pomyślnie
+      //If all validation was complete
       if ($validationComplete == true) {
 
-        if ($connect->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `password`, `email`) VALUES('$firstname', '$lastname', '$login', '$password_hash', '$email')")) {
+        if ($connect->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `password`, `email`) VALUES('$firstname', '$lastname', '$login', '$password_hash', '$email');")) {
           $_SESSION['RegisterComplete'] = true;
 
           header('Location: welcome.php');

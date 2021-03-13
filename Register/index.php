@@ -28,6 +28,9 @@ include "register.php";
 <body>
     <div class="login-register-body">
         <div class="login-register-container">
+
+            <a class="material-icons md-34 login-register-close" href="../">close</a>
+
             <div class="login-container">
                 <div class="login-register--text">
                     <h2>Masz już konto?</h2>
@@ -45,23 +48,37 @@ include "register.php";
                     <form id="formularz" method="POST" class="register-form">
                         <?php
                         echo '<div>';
-
                         echo '<div class="register-names">';
 
+                        //FirstName remember value
+                        if (isset($_SESSION['rd_firstname'])) {
+                            $rd_firstname = $_SESSION['rd_firstname'];
+                        } else {
+                            $rd_firstname = '';
+                        }
+                        //FirstName input
                         if (isset($_SESSION['error_firstname'])) {
                             echo '<input class="error" type="text" name="firstname" placeholder="Imie">';
                         } else {
-                            echo '<input type="text" name="firstname" placeholder="Imie">';
+                            echo '<input type="text" name="firstname" value="' . $rd_firstname . '" placeholder="Imie">';
                         }
 
+                        //LastName remember value
+                        if (isset($_SESSION['rd_lastname'])) {
+                            $rd_lastname = $_SESSION['rd_lastname'];
+                        } else {
+                            $rd_lastname = '';
+                        }
+                        //LastName input
                         if (isset($_SESSION['error_lastname'])) {
                             echo '<input class="error" type="text" name="lastname" placeholder="Nazwisko">';
                         } else {
-                            echo '<input type="text" name="lastname" placeholder="Nazwisko">';
+                            echo '<input type="text" name="lastname" value="' . @$rd_lastname . '" placeholder="Nazwisko">';
                         }
 
                         echo '</div>';
 
+                        //FirstName and LastName errot text
                         if (isset($_SESSION['error_firstname']) && isset($_SESSION['error_lastname'])) {
                             echo '<span class="error-text">' . $_SESSION['error_name'] . '</span>';
                             unset($_SESSION['error_name']);
@@ -79,16 +96,32 @@ include "register.php";
                         ?>
 
                         <?php
+                        //Login remember value
+                        if (isset($_SESSION['rd_login'])) {
+                            $rd_login = $_SESSION['rd_login'];
+                        } else {
+                            $rd_login = '';
+                        }
+                        //Login input and login error text
                         if (isset($_SESSION['error_login'])) {
-                            echo '<div><input class="error" type="text" name="login" placeholder="Login">';
-                            echo '<span class="error-text">' . $_SESSION['error_login'] . '</span></div>';
+                            echo '<div>';
+                            echo '<input class="error" type="text" name="login" placeholder="Login">';
+                            echo '<span class="error-text">' . $_SESSION['error_login'] . '</span>';
+                            echo '</div>';
                             unset($_SESSION['error_login']);
                         } else {
-                            echo '<input type="text" name="login" placeholder="Login">';
+                            echo '<input type="text" name="login" value="' . $rd_login . '" placeholder="Login">';
                         }
                         ?>
 
                         <?php
+                        //Email remember value
+                        if (isset($_SESSION['rd_email'])) {
+                            $rd_email = $_SESSION['rd_email'];
+                        } else {
+                            $rd_email = '';
+                        }
+                        //Email input and email error text
                         if (isset($_SESSION['error_email'])) {
                             echo '<div>';
                             echo '<input class="error" type="email" name="email" placeholder="E-mail">';
@@ -96,7 +129,7 @@ include "register.php";
                             echo '</div>';
                             unset($_SESSION['error_email']);
                         } else {
-                            echo '<input type="email" name="email" placeholder="E-mail">';
+                            echo '<input type="email" name="email" value="' . $rd_email . '" placeholder="E-mail">';
                         }
                         ?>
 
@@ -104,20 +137,35 @@ include "register.php";
                         echo '<div>';
                         echo '<div class="register-passwords">';
 
+                        //Password remember value
+                        if (isset($_SESSION['rd_password'])) {
+                            $rd_password = $_SESSION['rd_password'];
+                        } else {
+                            $rd_password = '';
+                        }
+                        //Password input
                         if (isset($_SESSION['error_password'])) {
                             echo '<input class="error" type="password" name="password" placeholder="Hasło">';
                         } else {
-                            echo '<input type="password" name="password" placeholder="Hasło">';
+                            echo '<input type="password" name="password" value="' . $rd_password . '" placeholder="Hasło">';
                         }
 
+                        //RepeatPassword remember value
+                        if (isset($_SESSION['rd_repeatpassword'])) {
+                            $rd_repeatpassword = $_SESSION['rd_repeatpassword'];
+                        } else {
+                            $rd_repeatpassword = '';
+                        }
+                        //RepeatPassword input
                         if (isset($_SESSION['error_password'])) {
                             echo '<input class="error" type="password" name="repeatpassword" placeholder="Powtórz hasło">';
                         } else {
-                            echo '<input type="password" name="repeatpassword" placeholder="Powtórz hasło">';
+                            echo '<input type="password" name="repeatpassword" value="' . $rd_repeatpassword . '" placeholder="Powtórz hasło">';
                         }
 
                         echo '</div>';
 
+                        //Password and RepeatPassword error text
                         if (isset($_SESSION['error_password'])) {
                             echo '<span class="error-text">' . $_SESSION['error_password'] . '</span>';
                             unset($_SESSION['error_password']);
@@ -128,7 +176,11 @@ include "register.php";
 
                         <div class="form-checkbox">
                             <label>
-                                <input type="checkbox" name="termsofuser">
+                                <input type="checkbox" name="termsofuser" <?php //TermsOfUser remember value
+                                                                            if (isset($_SESSION['rd_termsofuser'])) {
+                                                                                echo "checked";
+                                                                                unset($_SESSION['rd_termsofuser']);
+                                                                            } ?> />
                                 Zgadzam się z
                                 <a href="">warunkami uzytkownika</a>
                             </label>

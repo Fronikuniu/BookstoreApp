@@ -2,11 +2,13 @@
 session_start();
 
 if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
-    if (($_SESSION['AdminPanel'] == 0) || ($_SESSION['AdminPanel'] == false)) {
-        header('Location: ../');
-        exit();
-    }
+    // if (!isset($_SESSION['AdminPanel']) && ($_SESSION['AdminPanel'] == false)) {
+    header('Location: ../');
+    exit();
+    // }
 };
+
+include "AddToBase.php";
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +30,44 @@ if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
     <div class="admin-panel-container">
         <h1>Admin Panel</h1>
         <div class="admin-panel-form">
-            <form action="AddToBase.php" class="ap-form">
-                <input type="text" name="title" placeholder="Tytuł">
-                <input type="text" name="author" placeholder="Autor">
-                <textarea type="text" name="description" class="panel-admin-desc" placeholder="Opis"></textarea>
+
+            <a class="material-icons md-34 login-register-close" href="../">close</a>
+
+            <form method="POST" class="ap-form">
+                <?php
+                //Title input and Title error text
+                if (isset($_SESSION['error_title'])) {
+                    echo '<div>';
+                    echo '<input class="error" type="text" name="title" placeholder="Tytuł">';
+                    echo '<span class="error-textPA">' . $_SESSION['error_title'] . '</span>';
+                    echo '</div>';
+                    unset($_SESSION['error_title']);
+                } else {
+                    echo '<input type="text" name="title" placeholder="Tytuł">';
+                }
+
+                //Author input and Author error text
+                if (isset($_SESSION['error_author'])) {
+                    echo '<div>';
+                    echo '<input class="error" type="text" name="author" placeholder="Autor">';
+                    echo '<span class="error-textPA">' . $_SESSION['error_author'] . '</span>';
+                    echo '</div>';
+                    unset($_SESSION['error_author']);
+                } else {
+                    echo '<input type="text" name="author" placeholder="Autor">';
+                }
+
+                //Description input and Description error text
+                if (isset($_SESSION['error_description'])) {
+                    echo '<div>';
+                    echo '<textarea type="text" name="description" class="panel-admin-desc error" placeholder="Opis"></textarea>';
+                    echo '<span class="error-textPA">' . $_SESSION['error_description'] . '</span>';
+                    echo '</div>';
+                    unset($_SESSION['error_description']);
+                } else {
+                    echo '<textarea type="text" name="description" class="panel-admin-desc" placeholder="Opis"></textarea>';
+                }
+                ?>
 
                 <label for="table">Wybierz tablice:</label>
                 <select name="table" id="">
@@ -44,13 +80,13 @@ if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
                     <optgroup label="Kategorie dla ksiazek">
                         <option value="literatura">Literatura</option>
                         <option value="lektury">Lektury</option>
-                        <option value="ksiązki_obcojęzyczne">Ksiązki obcojęzyczne</option>
+                        <option value="ksiazki_obcojezyczne">Ksiązki obcojęzyczne</option>
                         <option value="podreczniki">Podreczniki</option>
                         <option value="biografie">Biografie</option>
                         <option value="dokumentalne">Dokumentalne</option>
                     </optgroup>
                     <optgroup label="Kategorie dla wideo">
-                        <option value="e-booki">E-booki</option>
+                        <option value="ebooki">E-booki</option>
                         <option value="audiobooki">Audiobooki</option>
                         <option value="filmy">Filmy</option>
                         <option value="muzyka">Muzyka</option>
@@ -62,6 +98,16 @@ if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
                     <input type="submit" value="Dodaj książkę">
                 </div>
             </form>
+
+            <?php
+            //Message if book was added into database
+            if (isset($_SESSION['Added'])) {
+                echo '<div>';
+                echo '<span class="error-textPA--added">' . $_SESSION['Added'] . '</span>';
+                echo '<div>';
+                unset($_SESSION['Added']);
+            }
+            ?>
         </div>
     </div>
 
