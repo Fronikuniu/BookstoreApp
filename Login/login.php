@@ -16,7 +16,7 @@ try {
     $login = htmlentities($login, ENT_QUOTES, "UTF-8");
 
     $sql = sprintf(
-      "SELECT * FROM users WHERE BINARY login='%s'",
+      "SELECT * FROM users WHERE login='%s'",
       mysqli_real_escape_string($connect, $login)
     );
 
