@@ -67,6 +67,8 @@
           echo "Błąd serwera";
           echo $error;
         }
+      } else {
+        echo '<p style="font-size: 20px;">Wpisz dane w polu teskstowym aby wyświetlić poszukiwaną frazę.</p>';
       }
 
       //Function to slice text
