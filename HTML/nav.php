@@ -5,7 +5,7 @@
         <img src="/images/logo.svg" alt="Logo">
       </a>
 
-      <div class="menu__top__search">
+      <div class="menu__top__search" style="display: none;">
         <label for="SearchBooks"></label>
         <input placeholder="Wyszukaj w internecie" type="text" name="SearchBooks" class="input-search" id="searchInput">
         <button class="btn btn--search " type="submit" id="searchButton">
@@ -14,9 +14,10 @@
       </div>
 
       <div class="menu__top__login">
-        <!-- If the user has access to the admin panel -->
+
         <?php
-        
+        //If the user has access to the admin panel
+
         if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
           if ($_SESSION['AdminPanel'] == 1) {
             echo "Zalogowano jako: <br>" . @$_SESSION['Name'];
@@ -102,25 +103,25 @@
 
           <ul>
             <li>
-              <a href="/Wideo#EBooki">
+              <a href="/Wideo/#EBooki">
                 <span class="material-icons md-30">earbuds</span>
                 E-booki
               </a>
             </li>
             <li>
-              <a href="/Wideo#Audiobooki">
+              <a href="/Wideo/#Audiobooki">
                 <span class="material-icons md-30">headphones</span>
                 Audiobooki
               </a>
             </li>
             <li>
-              <a href="/Wideo#Filmy">
+              <a href="/Wideo/#Filmy">
                 <span class="material-icons md-30">local_movies</span>
                 Filmy
               </a>
             </li>
             <li>
-              <a href="/Wideo#Muzyka">
+              <a href="/Wideo/#Muzyka">
                 <span class="material-icons md-30">audiotrack</span>
                 Muzyka
               </a>
