@@ -1,0 +1,139 @@
+.menu__bottom {
+  display: initial;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.menu__top__login {
+  width: 41.1%;
+  display: flex;
+}
+
+.landing-page__text h1 {
+  font-size: 40px;
+}
+
+.landing-page__text h2 {
+  font-size: 30px;
+}
+
+.landing-page a {
+  padding: 10px 10px;
+}
+
+.landing-page__text {
+  height: 18%;
+}
+
+.display-books {
+  padding-top: 110px;
+}
+
+.display h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.wrap-list {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.footer__contact-info-buttons {
+  width: 30%;
+}
+
+.footer__contact-info-buttons img {
+  height: 40px;
+}
+
+.contact-image {
+  width: 25%;
+  height: 100%;
+}
+
+.contact-form-submit {
+  height: 60px;
+}
+
+.footer__contact-form {
+  height: 40vh;
+}
+
+.contact-form h1 {
+  font-size: 40px;
+  margin-top: 0;
+}
+
+.contact-form-name,
+.contact-form-email,
+.contact-form-message,
+.contact-form-submit {
+  font-size: 1.1rem;
+  height: 60px;
+}
+
+.contact {
+  height: 150px;
+}
+
+.contact-form-message {
+  height: 150px;
+  font-size: none;
+}
+
+.form-text {
+  height: 150px;
+}
+
+.form {
+  justify-content: space-around;
+}
+
+.about {
+  height: 600px;
+  padding: 50px 50px 320px 50px;
+}
+
+.about-text {
+  height: 200px;
+}
+
+.about-text h1 {
+  font-size: 40px;
+}
+
+.about-text h2 {
+  font-size: 30px;
+}
+
+.about-text p {
+  font-size: 20px;
+}
+
+.about-info > a > span {
+  font-size: 48px;
+}
+
+.display-books form {
+  display: unset;
+}
+
+.display-books select {
+  height: 50px;
+  width: 15%;
+  padding-left: 15px;
+}
+
+.display-books input[type=text] {
+  height: 50px;
+  width: 42%;
+  padding-left: 15px;
+}
+
+.display-books input[type=submit] {
+  height: 50px;
+  width: 41%;
+}

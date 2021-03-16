@@ -40,8 +40,7 @@
 
         <?php include "../HTML/footer.php" ?>
 
-        <script src="/JS/main.js" type="module"></script>
-        <script src="/JS/fixed-menu.js"></script>
+        <?php include "../HTML/scripts.php" ?>
 </body>
 
 </html>

@@ -87,9 +87,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="E-Booki">
     <h1>E-booki</h1>
-    <div id="ebooki" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica wideo
@@ -133,9 +133,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Audiobooki">
     <h1>Audiobooki</h1>
-    <div id="ebooki" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica wideo
@@ -179,9 +179,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Filmy">
     <h1>Filmy</h1>
-    <div id="ebooki" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica wideo
@@ -225,9 +225,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Muzyka">
     <h1>Muzyka</h1>
-    <div id="ebooki" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica wideo

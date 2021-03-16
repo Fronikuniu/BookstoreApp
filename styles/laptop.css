@@ -1,0 +1,72 @@
+.container {
+  width: 837px;
+}
+.menu__top__login {
+  width: 35%;
+}
+.wrap-list {
+  justify-content: unset;
+  margin-top: 85px;
+  margin-bottom: 85px;
+}
+.display-books {
+  padding-top: 120px;
+}
+.display h1 {
+  text-align: left;
+}
+.card {
+  margin-right: 30px;
+}
+.about {
+  height: 700px;
+}
+.contact-image {
+  display: initial;
+  width: 25%;
+  height: 100%;
+}
+.contact-form {
+  width: 75%;
+}
+.contact-form-message {
+  width: 45%;
+}
+.contact-form-submit {
+  width: 45%;
+}
+/* .footer__contact-info {
+  padding-bottom: 0;
+} */
+.footer__contact-info-buttons {
+  width: 25%;
+}
+.card:nth-of-type(3n) {
+  margin-right: 0;
+}
+.card:nth-of-type(4n) {
+  margin-right: 30px;
+}
+.contact-form-name,
+.contact-form-email,
+.contact-form-message,
+.contact-form-submit {
+  font-size: 1.2rem;
+}
+
+.display-books select {
+  height: 50px;
+  width: 15%;
+  padding-left: 15px;
+}
+
+.display-books input[type=text] {
+  height: 50px;
+  width: 42%;
+  padding-left: 15px;
+}
+
+.display-books input[type=submit] {
+  height: 50px;
+  width: 42%;
+}

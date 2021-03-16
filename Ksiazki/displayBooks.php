@@ -87,9 +87,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Literatura">
     <h1>Literatura</h1>
-    <div id="literatura" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki
@@ -133,9 +133,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Lektury">
     <h1>Lektury</h1>
-    <div id="lektury" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki
@@ -179,9 +179,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Ksiązki_obcojęzyczne">
     <h1>Książki obcojęzyczne</h1>
-    <div id="ksiazki_obcojezyczne" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki
@@ -225,9 +225,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Podreczniki">
     <h1>Podręczniki</h1>
-    <div id="podreczniki" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki
@@ -271,9 +271,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Biografie">
     <h1>Książki biograficzne</h1>
-    <div id="biografie" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki
@@ -317,9 +317,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="Dokumentalne">
     <h1>Książki dokumentalne</h1>
-    <div id="dokumentalne" class="wrap-list">
+    <div class="wrap-list">
       <?php
       try {
         //Polaczenie z tablica ksiazki

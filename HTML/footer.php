@@ -12,13 +12,13 @@
 
       <div class="about-info">
         <a href="tel:123123123">
-          <span class="material-icons md-48">phone_iphone</span>
-          <p>Zadzwoń do nas!</p>
+          <span class="material-icons">phone_iphone</span>
+          <p>Zadzwoń!</p>
         </a>
 
         <a href="mailto:example@gmail.com">
-          <span class="material-icons md-48">mail</span>
-          <p>Napisz do nas!</p>
+          <span class="material-icons">mail</span>
+          <p>Napisz!</p>
         </a>
       </div>
     </div>
