@@ -32,16 +32,6 @@ include "register.php";
             <a class="material-icons md-34 login-register-close" href="../">close</a>
 
             <div class="login-container">
-                <div class="login-register--text">
-                    <h2>Masz już konto?</h2>
-                    <p>Nie czekaj i zaloguj sie na nie już teraz!</p>
-                    <button>
-                        <a href="../Login/">Zaloguj się!</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="register-container">
                 <h1>Zarejestruj się</h1>
 
                 <div>
@@ -195,6 +185,23 @@ include "register.php";
                         <input type="submit" name="login-submit" value="Zarejestruj się" class="g-recaptcha" data-sitekey="6Le8MHgaAAAAAA9rXIEeYFCB4eGLqbvyq-phw_da" data-callback='onSubmit'>
 
                     </form>
+                </div>
+
+                <div class="responsive-login-register--text">
+                    <h2>Masz już konto?</h2>
+                    <button>
+                        <a href="../Login/">Zaloguj się!</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="register-container">
+                <div class="login-register--text">
+                    <h2>Masz już konto?</h2>
+                    <p>Nie czekaj i zaloguj sie na nie już teraz!</p>
+                    <button>
+                        <a href="../Login/">Zaloguj się!</a>
+                    </button>
                 </div>
             </div>
         </div>

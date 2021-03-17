@@ -60,13 +60,62 @@
   padding-left: 15px;
 }
 
-.display-books input[type=text] {
+.display-books input[type='text'] {
   height: 50px;
   width: 42%;
   padding-left: 15px;
 }
 
-.display-books input[type=submit] {
+.display-books input[type='submit'] {
   height: 50px;
   width: 42%;
+}
+
+.login-register-container {
+  width: 950px;
+}
+
+.register-container {
+  display: flex;
+}
+
+.login-container {
+  border-right: 1px solid white;
+  height: 550px;
+  padding: unset;
+}
+
+.responsive-register-container {
+  display: none;
+}
+
+.register-form {
+  height: 470px;
+}
+
+.responsive-login-register--text {
+  display: none;
+}
+
+.register-welcome {
+  padding: unset;
+}
+
+.register-welcome h1 {
+  font-size: 40px;
+}
+
+.register-welcome h2 {
+  font-size: 30px;
+}
+
+.admin-panel-form {
+  width: 600px;
+  height: 730px;
+  border-top-right-radius: 50px;
+}
+
+.admin-panel-close {
+  top: 35px;
+  right: 35px;
 }

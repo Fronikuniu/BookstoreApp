@@ -1,25 +1,34 @@
 .container {
   width: 1120px;
 }
+
 .menu__top__login {
   width: 26%;
 }
+
 .wrap-list {
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
 .contact-form-submit {
   width: 25%;
 }
-.contact-form-name,
-.contact-form-email,
-.contact-form-message,
-.contact-form-submit {
-  font-size: 1.3rem;
-}
+
 .card:nth-of-type(3n) {
   margin-right: 30px;
 }
+
 .card:nth-of-type(4n) {
   margin-right: 0px;
+}
+
+.login-register-container {
+  height: 700px;
+  width: 1000px;
+}
+
+.admin-panel-form {
+  width: 600px;
+  height: 800px;
 }

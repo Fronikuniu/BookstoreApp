@@ -33,8 +33,8 @@ if (isset($_SESSION['rd_termsofuser'])) unset($_SESSION['rd_termsofuser']);
   <link rel="shortcut icon" href="/images/icon-AdminPanel.svg">
   <title>Księgarnia internetowa | Logowanie</title>
 
-  <META HTTP-EQUIV="Refresh" CONTENT="5; URL=http://froniudev.pl/Login/">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+  <!-- <META HTTP-EQUIV="Refresh" CONTENT="5; URL=http://froniudev.pl/Login/">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8"> -->
 </head>
 
 <body>

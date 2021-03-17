@@ -14,7 +14,6 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
-  position: relative;
 }
 
 a {
@@ -268,7 +267,8 @@ button a {
   color: rgb(58, 58, 58);
 }
 
-.r_books button, .r_video button {
+.r_books button,
+.r_video button {
   display: flex;
 }
 
@@ -289,11 +289,11 @@ button a {
   width: 200px;
 }
 
-.responsive-buttons a{
+.responsive-buttons a {
   color: rgb(172, 40, 17);
 }
 
-.responsive-buttons a:hover{
+.responsive-buttons a:hover {
   color: rgb(189, 76, 57);
 }
 
@@ -318,9 +318,9 @@ button a {
 }
 
 .landing-page-shadow {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .landing-page-shadow .container {
@@ -490,7 +490,7 @@ textarea {
 .contact-form-message::-moz-scrollbar-track,
 .panel-admin-desc::-moz-scrollbar-track {
   -webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
-                      inset -4px -4px 20px rgb(76, 76, 76);
+    inset -4px -4px 20px rgb(76, 76, 76);
   box-shadow: inset 4px 4px 15px #0e0e0e, inset -4px -4px 20px rgb(76, 76, 76);
   border-radius: 10px;
   background-color: rgb(95, 95, 95);
@@ -511,7 +511,7 @@ textarea {
 .panel-admin-desc::-moz-scrollbar-track {
   border-radius: 10px;
   -webkit-box-shadow: inset 4px 4px 15px #0e0e0e,
-                      inset -4px -4px 20px rgb(76, 76, 76);
+    inset -4px -4px 20px rgb(76, 76, 76);
   box-shadow: inset 4px 4px 15px #0e0e0e, inset -4px -4px 20px rgb(76, 76, 76);
   background: none;
 }
@@ -608,11 +608,12 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 800px;
-  width: 600px;
+  height: 670px;
+  width: 98%;
   box-shadow: 13px 13px 20px #171717, -13px -13px 20px rgb(56 56 56);
   border-radius: 50px;
   position: relative;
+  border-top-right-radius: 0;
 }
 
 .ap-form {
@@ -620,14 +621,14 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 650px;
+  height: 600px;
 }
 
 .admin-panel-form input,
 textarea,
 .admin-panel-form select {
-  height: 60px;
-  width: 400px;
+  height: 50px;
+  width: 300px;
   box-shadow: inset 4px 4px 20px #0e0e0e, inset -4px -4px 20px rgb(76, 76, 76);
   background: none;
   border: none;
@@ -640,9 +641,10 @@ textarea,
 
 .admin-panel-buttons input[type='submit'],
 .admin-panel-buttons input[type='reset'] {
+  font-size: 0.8rem;
   font-weight: 600;
-  height: 50px;
-  width: 180px;
+  height: 45px;
+  width: 140px;
   padding: 0;
   cursor: pointer;
 }
@@ -680,7 +682,7 @@ textarea,
 }
 
 .admin-panel-buttons {
-  width: 400px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
 }
@@ -714,14 +716,15 @@ textarea,
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
-  width: 1000px;
+  height: 650px;
+  width: 95%;
   box-shadow: 13px 13px 20px #171717, -13px -13px 20px rgb(56 56 56);
   border-radius: 50px;
   position: relative;
 }
 
-.login-register-container h1 {
+.login-register-container h1,
+.register-welcome h1 {
   color: white;
   font-size: 40px;
   font-weight: bold;
@@ -739,10 +742,12 @@ textarea,
 }
 
 .login-container {
-  border-right: 1px solid white;
+  height: 600px;
+  padding-top: 40px;
 }
 
 .register-container {
+  display: none;
   height: 600px;
 }
 
@@ -808,7 +813,7 @@ textarea,
 }
 
 .register-form {
-  height: 470px;
+  height: 450px;
 }
 
 .form-checkbox {
@@ -820,14 +825,15 @@ textarea,
 }
 
 .login-form input[type='submit']:hover,
-.register-form input[type='submit']:hover, 
+.register-form input[type='submit']:hover,
 .contact-form-submit:hover {
   background-color: #1f1f1f;
   box-shadow: inset 4px 4px 20px #0c0c0c, inset -4px -4px 20px rgb(76 76 76);
   color: rgb(212, 84, 62);
 }
 
-.login-register--text {
+.login-register--text,
+.responsive-login-register--text {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -836,12 +842,24 @@ textarea,
   height: 300px;
 }
 
+.responsive-login-register--text {
+  height: 130px;
+}
+
 .login-register--text h2,
-.register-welcome h2 {
+.register-welcome h2,
+.responsive-login-register--text h2 {
   color: white;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 0px 0px 15px #c7c7c7;
+}
+
+.responsive-login-register--text h2 {
+  font-size: 25px;
+  color: #999;
+  text-shadow: unset;
+  padding-bottom: 5px;
 }
 
 .login-register--text p {
@@ -852,7 +870,8 @@ textarea,
   line-height: 130%;
 }
 
-.login-register--text a {
+.login-register--text a,
+.responsive-login-register--text a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -861,11 +880,13 @@ textarea,
   color: rgb(117, 117, 117);
 }
 
-.login-register--text a:hover {
+.login-register--text a:hover,
+.responsive-login-register--text a:hover {
   color: rgb(212, 84, 62);
 }
 
-.login-register--text button {
+.login-register--text button,
+.responsive-login-register--text button {
   height: 50px;
   width: 220px;
   padding: 0;
@@ -878,7 +899,8 @@ textarea,
   font-size: 1rem;
 }
 
-.login-register--text button:hover {
+.login-register--text button:hover,
+.responsive-login-register--text button:hover {
   background-color: #1f1f1f;
   box-shadow: inset 4px 4px 20px #0c0c0c, inset -4px -4px 20px rgb(76 76 76);
 }
@@ -889,9 +911,15 @@ textarea,
   justify-content: space-evenly;
   align-items: center;
   height: 200px;
+  padding: 15px;
+}
+
+.register-welcome h1 {
+  font-size: 25px;
 }
 
 .register-welcome h2 {
+  font-size: 20px;
   color: tomato;
   font-weight: unset;
   text-shadow: 0px 0px 15px #570707;
@@ -917,7 +945,7 @@ textarea,
 }
 
 .error-textPA {
-  width: 400px;
+  width: 300px;
 }
 
 .error-textPA--added {
@@ -931,11 +959,17 @@ textarea,
   justify-content: start;
 }
 
-.login-register-close {
+.login-register-close,
+.admin-panel-close {
   position: absolute;
   color: #ee6645;
-  top: 35px;
-  right: 35px;
+  top: 20px;
+  right: 20px;
+}
+
+.admin-panel-close {
+  top: 5px;
+  right: 5px;
 }
 
 /* KONIEC LOGOWANIA REJESTRACJI */
@@ -959,13 +993,13 @@ textarea,
   padding-left: 15px;
 }
 
-.display-books input[type=text] {
+.display-books input[type='text'] {
   height: 50px;
   width: 100%;
   padding-left: 15px;
 }
 
-.display-books input[type=submit] {
+.display-books input[type='submit'] {
   height: 50px;
   width: 100%;
 }
@@ -996,7 +1030,7 @@ textarea,
   padding-bottom: 10px;
 }
 
-.card-body h5{
+.card-body h5 {
   font-size: 25px;
 }
 

@@ -8,7 +8,7 @@ if (!isset($_SESSION['logged']) && ($_SESSION['logged'] == false)) {
     // }
 };
 
-include "AddToBase.php";
+include "addToBase.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ include "AddToBase.php";
         <h1>Admin Panel</h1>
         <div class="admin-panel-form">
 
-            <a class="material-icons md-34 login-register-close" href="../">close</a>
+            <a class="material-icons md-34 admin-panel-close" href="../">close</a>
 
             <form method="POST" class="ap-form">
                 <?php

@@ -60,6 +60,15 @@ if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
                         <a href="">Nie pamiętasz hasła?</a>
                     </form>
                 </div>
+
+                <div class="responsive-register-container">
+                    <div class="responsive-login-register--text">
+                        <h2>Nie masz jeszcze konta?</h2>
+                        <button>
+                            <a href="../Register/">Zarejestruj się!</a>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div class="register-container">
