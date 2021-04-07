@@ -1102,7 +1102,7 @@ textarea,
   line-height: 130%;
 }
 
-iframe {
+.about-container > iframe {
   position: absolute;
   bottom: 70px;
 }
