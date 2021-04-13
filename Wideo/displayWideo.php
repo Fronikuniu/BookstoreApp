@@ -87,7 +87,7 @@
     </div>
   </div>
 
-  <div class="container" id="E-Booki">
+  <div class="container" id="eBooki">
     <h1>E-booki</h1>
     <div class="wrap-list">
       <?php

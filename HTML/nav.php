@@ -210,7 +210,7 @@
 
       <ul>
         <li>
-          <a href="/Wideo/#E-Booki">
+          <a href="/Wideo/#eBooki">
             <span class="material-icons md-24">earbuds</span>
             E-booki
           </a>

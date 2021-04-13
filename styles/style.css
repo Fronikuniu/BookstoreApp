@@ -223,7 +223,9 @@ button a {
 }
 
 .books button:focus + ul,
-.video button:focus + ul {
+.books ul:hover,
+.video button:focus + ul,
+.video ul:hover {
   display: flex;
   transform: translateY(0px);
 }
