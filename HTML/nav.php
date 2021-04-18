@@ -24,32 +24,32 @@
         //If the user has access to the admin panel
 
         if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
-          if ($_SESSION['AdminPanel'] == 1) {
-            echo "<p>Zalogowano jako: <br>" . @$_SESSION['Name'] . "</p>";
-          } else {
-            echo "<p>Zalogowano jako: <br>" . @$_SESSION['Name'] . "</p>";
-          }
+          echo '<p>Zalogowano jako: <br><span style="color: tomato;">' . @$_SESSION['Name'] . '</span></p>';
         } else {
           echo "<p>Witaj Nieznajomy!</p>";
         }
 
         ?>
-        <div>
+        <div class="nav-buttons">
           <?php
           if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
-            if ($_SESSION['AdminPanel'] == 1) {
+            if (@$_SESSION['AdminPanel'] == 1) {
               echo '<button class="btn">
-                <a href="../AdminPanel/" class="material-icons md-36">admin_panel_settings</a>
-                </button>';
+                    <a href="../AdminPanel/" class="material-icons md-36">admin_panel_settings</a>
+                    </button>';
             }
           }
           ?>
           <button class="btn">
             <a href="/Login/" class="material-icons md-36">person</a>
           </button>
-          <button class="btn">
-            <a href="/Login/logout.php" class="material-icons md-36">person_off</a>
-          </button>
+          <?php
+          if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
+            echo '<button class="btn">
+                  <a href="/Login/logout.php" class="material-icons md-36">person_off</a>
+                  </button>';
+          }
+          ?>
         </div>
       </div>
     </div>
@@ -250,11 +250,7 @@
     //If the user has access to the admin panel
 
     if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
-      if ($_SESSION['AdminPanel'] == 1) {
-        echo '<p>Zalogowano jako: <br><span style="color: tomato;">' . @$_SESSION['Name'] . '</span></p>';
-      } else {
-        echo '<p>Zalogowano jako: <br><span style="color: tomato;">' . @$_SESSION['Name'] . '</span></p>';
-      }
+      echo '<p>Zalogowano jako: <br><span style="color: tomato;">' . @$_SESSION['Name'] . '</span></p>';
     } else {
       echo "<p>Witaj Nieznajomy!</p>";
     }
@@ -273,9 +269,15 @@
       <button class="btn">
         <a href="/Login/" class="material-icons md-36">person</a>
       </button>
-      <button class="btn">
-        <a href="/Login/logout.php" class="material-icons md-36">person_off</a>
-      </button>
+      <?php
+      if (isset($_SESSION['logged']) && ($_SESSION['logged'] == true)) {
+        if ($_SESSION['AdminPanel'] == 1) {
+          echo '<button class="btn">
+                    <a href="/Login/logout.php" class="material-icons md-36">person_off</a>
+                    </button>';
+        }
+      }
+      ?>
     </div>
   </div>
 </div>

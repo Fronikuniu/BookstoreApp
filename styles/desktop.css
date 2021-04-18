@@ -32,3 +32,7 @@
   width: 600px;
   height: 800px;
 }
+
+.about-container > iframe {
+  width: 1400px;
+}
