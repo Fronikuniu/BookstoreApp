@@ -100,7 +100,7 @@ button a {
   width: 26%;
   height: 60px;
   display: none;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   text-align: right;
 }
